@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty Mood</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fce4ec;
+      transition: 0.5s;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 5px 20px #b5838d;
+    }
+
+    h1 {
+      color: #ad1457;
+    }
+
+    #visual {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      transition: 0.5s;
+    }
+
+    #estilo {
+      color: #880e4f;
+      font-size: 28px;
+    }
+
+    #dica {
+      font-size: 18px;
+      min-height: 50px;
+    }
+
+    #paleta {
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
+    button {
+      padding: 13px;
+      margin: 6px;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    #natural {
+      background-color: #81b29a;
+    }
+
+    #poderosa {
+      background-color: #d62828;
+    }
+
+    #romantica {
+      background-color: #e5989b;
+    }
+
+    #festival {
+      background-color: #7209b7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>✨ Beauty Mood ✨</h1>
+
+    <p>Escolha seu mood de hoje:</p>
+
+    <button id="natural" onclick="escolherMood('natural')">
+      🌿 Natural
+    </button>
+
+    <button id="poderosa" onclick="escolherMood('poderosa')">
+      🔥 Poderosa
+    </button>
+
+    <button id="romantica" onclick="escolherMood('romantica')">
+      🌷 Romântica
+    </button>
+
+    <button id="festival" onclick="escolherMood('festival')">
+      ✨ Festival
+    </button>
+
+    <img
+      id="visual"
+      src="imagens/natural.jpg"
+      alt="Maquiagem natural"
+    >
+
+    <h2 id="estilo">Glow Natural</h2>
+
+    <p id="dica">
+      Escolha uma opção para descobrir sua sugestão de beleza.
+    </p>
+
+    <p id="paleta">
+      Paleta: nude, pêssego e rosa-claro.
+    </p>
+  </div>
+
+  <script>
+    function escolherMood(mood) {
+      const visual = document.getElementById("visual");
+      const estilo = document.getElementById("estilo");
+      const dica = document.getElementById("dica");
+      const paleta = document.getElementById("paleta");
+
+      if (mood === "natural") {
+        visual.src = "imagens/natural.jpg";
+        visual.alt = "Maquiagem natural";
+
+        estilo.textContent = "Glow Natural";
+        dica.textContent =
+          "Aposte em uma pele iluminada, blush suave e gloss nos lábios.";
+        paleta.textContent =
+          "Paleta: nude, pêssego e rosa-claro.";
+
+        document.body.style.backgroundColor = "#d8f3dc";
+      }
+
+      else if (mood === "poderosa") {
+        visual.src = "imagens/poderosa.jpg";
+        visual.alt = "Maquiagem poderosa";
+
+        estilo.textContent = "Diva Poderosa";
+        dica.textContent =
+          "Use um batom marcante, delineado e muita confiança!";
+        paleta.textContent =
+          "Paleta: vermelho, preto e dourado.";
+
+        document.body.style.backgroundColor = "#ffccd5";
+      }
+
+      else if (mood === "romantica") {
+        visual.src = "imagens/romantica.jpg";
+        visual.alt = "Maquiagem romântica";
+
+        estilo.textContent = "Romântica Delicada";
+        dica.textContent =
+          "Experimente tons rosados, iluminador e um penteado delicado.";
+        paleta.textContent =
+          "Paleta: rosa, lilás e branco.";
+
+        document.body.style.backgroundColor = "#ffc8dd";
+      }
+
+      else if (mood === "festival") {
+        visual.src = "imagens/festival.jpg";
+        visual.alt = "Maquiagem para festival";
+
+        estilo.textContent = "Festival Glow";
+        dica.textContent =
+          "Aposte em glitter, sombras coloridas e muita criatividade!";
+        paleta.textContent =
+          "Paleta: roxo, azul, prata e neon.";
+
+        document.body.style.backgroundColor = "#cdb4db";
+      }
+    }
+  </script>
+
+</body>
+</html>
